@@ -14,7 +14,7 @@ public class PiedraPapelTijeras {
             - Solo se pueden usar ifs y switch
 
         Condiciones:
-            - Gana el mejor de 5
+            - Gana el mejor de 3
             - El usuario tiene que elegir que quiere sacar de una lista de opciones
             - Si elige alguna opcion no valida, pierde esa ronda ( por ahora no comprobamos valores fuera de rango)
             - Se calcula si alguien gana o si hay empate

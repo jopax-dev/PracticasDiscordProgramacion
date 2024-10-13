@@ -86,7 +86,7 @@ Como se ve, no es viable hacer un switch para esta condicion.
 
         mascota = "perro"; -> opciones perro | gato | conejo | periquito
         IF ( mascota.equals("perro") ) {
-            println( "que perro mas bonito tines" );
+            println( "que perro mas bonito tienes" );
         } ELSE IF ( mascota.equals("gato") ) {
             println( "tienes un gato" );
         } ELSE IF ( mascota.equals("conejo") ) {
@@ -97,7 +97,7 @@ Como se ve, no es viable hacer un switch para esta condicion.
 
         SWITCH ( mascota ) {
           case "perro":
-            println( "que perro mas bonito tines");
+            println( "que perro mas bonito tienes");
             break;
   
           case "gato":
