@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class SigueTuHistoria {
     /*
-        Reglas basicas: Empieza la aventura y el usuario va eligiendo en funcion de una serie de opciones para ver a que
-                        pagina sera redirigido.
+        Reglas básicas: Empieza la aventura y el usuario va eligiendo en función de una serie de opciones para ver a qué
+                        página será redirigido.
 
         Limitaciones:
             - Solo se permite el uso de tipos que hemos visto (int, String, double....)
@@ -14,23 +14,23 @@ public class SigueTuHistoria {
         Ayuda:
             - Seguiremos la aventura hasta que el usuario llega al final.
             - Estamos limitados por tipos de datos vistos hasta ahora y por estructuras vistas hasta ahora.
-            - Para generar la historia y las opciones/enlaces a cada pagina, usaremos chatgpt ya que lo importante es
-                la lógica del programa, no el texto en si.
+            - Para generar la historia y las opciones/enlaces a cada página, usaremos chatgpt, ya que lo importante es
+                la lógica del programa, no el texto en sí.
      */
 
     public static void main(String[] args) {
 
         /*
             Definimos 4 variables
-            - En una guardaremos la pagina a la que vamos.
-            - En la otra, el numero de decisiones que tomamos hasta llegar al final.
-            - Tambien guardaremos la respuesta que elegimos
-            - La ultima, la utilizaremos para romper el buccle.
+            - En una guardaremos la página a la que vamos.
+            - En la otra, el número de decisiones que tomamos hasta llegar al final.
+            - También guardaremos la respuesta que elegimos
+            - La última, la utilizaremos para romper el bucle.
          */
         int pagina = 1, decisiones = 0, respuesta = 0;
         boolean finAventura = false;
 
-        // Creamos el scanner donde leeremos la opcion a elegir del usuario
+        // Creamos el scanner donde leeremos la opción a elegir del usuario
         Scanner sc = new Scanner(System.in);
 
         /*
@@ -40,32 +40,43 @@ public class SigueTuHistoria {
         while (!finAventura) {
             switch (pagina) {
                 case 1:
-                    System.out.println("Página 1: Llegada a la Isla");
-                    System.out.println("Has llegado a una isla misteriosa, donde la vegetación densa y los sonidos de la " +
-                            "fauna te rodean. \nEl aire huele a sal y a tierra húmeda, y el mapa que encontraste parece  " +
-                            "indicar que el tesoro está \nescondido en el corazón de la isla. A tu alrededor, puedes ver " +
-                            "dos senderos: uno que se adentra en \nla selva, cubierto de hojas y flores exóticas, y otro " +
-                            "que sigue la costa, donde las olas rompen \nsuavemente  contra las rocas. La emoción y la " +
-                            "intriga te empujan a tomar una decisión.");
+                    System.out.println("\nPágina 1: Llegada a la Isla");
+                    System.out.println("""
+                            Has llegado a una isla misteriosa, donde la vegetación densa y los sonidos de la \
+                            fauna te rodean.\s
+                            El aire huele a sal y a tierra húmeda, y el mapa que encontraste parece  \
+                            indicar que el tesoro está\s
+                            escondido en el corazón de la isla. A tu alrededor, puedes ver \
+                            dos senderos: uno que se adentra en\s
+                            la selva, cubierto de hojas y flores exóticas, y otro \
+                            que sigue la costa, donde las olas rompen\s
+                            suavemente  contra las rocas. La emoción y la \
+                            intriga te empujan a tomar una decisión.""");
                     System.out.println("\nOpciones:");
                     System.out.println("\t1. Seguir el sendero hacia la selva. (Página 2)");
                     System.out.println("\t2. Caminar a lo largo de la costa. (Página 3)");
-                    System.out.print("\nQue opcion tomas?: ");
+                    System.out.print("\nQue opción tomas?: ");
                     respuesta = sc.nextInt();
                     if (respuesta == 1) {
                         pagina = 2;
                     } else {
                         pagina = 3;
                     }
+                    decisiones++;
                     break;
                 case 2:
                     System.out.println("\nPágina 2: En la Selva");
-                    System.out.println("Te adentras en la selva, donde la luz del sol apenas llega a tocar el suelo. Los " +
-                            "árboles son altos \ny frondosos, y sus hojas susurran al viento, creando una sinfonía natural" +
-                            ". El canto de las aves resuena \na tu alrededor, y te sientes observado por ojos invisibles. " +
-                            "A medida que avanzas, el camino se vuelve\nmás estrecho, y encuentras una cueva oscura a tu " +
-                            "izquierda, de cuya entrada emana un aire frío y húmedo. \nA tu derecha, un claro iluminado " +
-                            "por el sol muestra un extraño brillo que capta tu atención.");
+                    System.out.println("""
+                            Te adentras en la selva, donde la luz del sol apenas llega a tocar el suelo. Los \
+                            árboles son altos\s
+                            y frondosos, y sus hojas susurran al viento, creando una sinfonía natural\
+                            . El canto de las aves resuena\s
+                            a tu alrededor, y te sientes observado por ojos invisibles. \
+                            A medida que avanzas, el camino se vuelve
+                            más estrecho, y encuentras una cueva oscura a tu \
+                            izquierda, de cuya entrada emana un aire frío y húmedo.\s
+                            A tu derecha, un claro iluminado \
+                            por el sol muestra un extraño brillo que capta tu atención.""");
                     System.out.println("\nOpciones:");
                     System.out.println("\t1. Entrar en la cueva. (Página 4)");
                     System.out.println("\t2. Investigar el claro brillante. (Página 5)");
@@ -76,15 +87,21 @@ public class SigueTuHistoria {
                     } else {
                         pagina = 5;
                     }
+                    decisiones++;
                     break;
                 case 3:
                     System.out.println("\nPágina 3: A lo Largo de la Costa");
-                    System.out.println("Sigues la costa, sintiendo la arena entre tus pies y el sonido de las olas " +
-                            "rompiendo suavemente\ncontra las rocas. El paisaje es hermoso, pero un aire de misterio lo " +
-                            "envuelve. A lo lejos, un \nbarco encallado asoma entre las olas, como un recuerdo de tiempos " +
-                            "pasados, mientras que un pequeño \nfaro abandonado se alza majestuosamente en la distancia. " +
-                            "Sientes que el mapa menciona un punto \ncercano a la costa, lo que te motiva a decidir tu " +
-                            "siguiente movimiento.");
+                    System.out.println("""
+                            Sigues la costa, sintiendo la arena entre tus pies y el sonido de las olas \
+                            rompiendo suavemente
+                            contra las rocas. El paisaje es hermoso, pero un aire de misterio lo \
+                            envuelve. A lo lejos, un\s
+                            barco encallado asoma entre las olas, como un recuerdo de tiempos \
+                            pasados, mientras que un pequeño\s
+                            faro abandonado se alza majestuosamente en la distancia. \
+                            Sientes que el mapa menciona un punto\s
+                            cercano a la costa, lo que te motiva a decidir tu \
+                            siguiente movimiento.""");
                     System.out.println("\nOpciones:");
                     System.out.println("\t1. Explorar el barco encallado. (Página 6)");
                     System.out.println("\t2. Acercarte al faro. (Página 7)");
@@ -95,15 +112,21 @@ public class SigueTuHistoria {
                     } else {
                         pagina = 7;
                     }
+                    decisiones++;
                     break;
                 case 4:
                     System.out.println("\nPágina 4: La Cueva");
-                    System.out.println("Dentro de la cueva, la oscuridad te envuelve como una manta pesada y sientes un " +
-                            "escalofrío recorrer tu \nespalda. Las paredes son húmedas y están cubiertas de extrañas " +
-                            "inscripciones que parecen contar \nhistorias de antiguos navegantes. El aire es denso y tiene" +
-                            " un olor a tierra y misterio. Un brillo \ntenue emana de una grieta en la roca, iluminando " +
-                            "parte de la cueva, pero un rugido sordo resuena en el fondo, \nlo que te hace dudar si debes " +
-                            "continuar.");
+                    System.out.println("""
+                            Dentro de la cueva, la oscuridad te envuelve como una manta pesada y sientes un \
+                            escalofrío recorrer tu\s
+                            espalda. Las paredes son húmedas y están cubiertas de extrañas \
+                            inscripciones que parecen contar\s
+                            historias de antiguos navegantes. El aire es denso y tiene\
+                             un olor a tierra y misterio. Un brillo\s
+                            tenue emana de una grieta en la roca, iluminando \
+                            parte de la cueva, pero un rugido sordo resuena en el fondo,\s
+                            lo que te hace dudar si debes \
+                            continuar.""");
                     System.out.println("\nOpciones:");
                     System.out.println("\t1. Acercarte al brillo. (Página 8)");
                     System.out.println("\t2. Salir de la cueva rápidamente. (Página 9)");
@@ -114,14 +137,19 @@ public class SigueTuHistoria {
                     } else {
                         pagina = 9;
                     }
+                    decisiones++;
                     break;
                 case 5:
                     System.out.println("\nPágina 5: El Claro Brillante");
-                    System.out.println("Te acercas al claro y descubres que el brillo proviene de un objeto dorado " +
-                            "enterrado en la tierra. Excavas un \npoco y encuentras una antigua moneda con un emblema que " +
-                            "coincide con el de tu mapa. La moneda brilla \nintensamente bajo la luz del sol, como si " +
-                            "guardara un secreto. Sin embargo, sientes que no estás solo, \nya que una sombra se mueve " +
-                            "entre los árboles cercanos, levantando la inquietud en tu interior.");
+                    System.out.println("""
+                            Te acercas al claro y descubres que el brillo proviene de un objeto dorado \
+                            enterrado en la tierra. Excavas un\s
+                            poco y encuentras una antigua moneda con un emblema que \
+                            coincide con el de tu mapa. La moneda brilla\s
+                            intensamente bajo la luz del sol, como si \
+                            guardara un secreto. Sin embargo, sientes que no estás solo,\s
+                            ya que una sombra se mueve \
+                            entre los árboles cercanos, levantando la inquietud en tu interior.""");
                     System.out.println("\nOpciones:");
                     System.out.println("\t1. Tomar la moneda y seguir explorando. (Página 10)");
                     System.out.println("\t2. Esconderte y observar la sombra. (Página 11)");
@@ -132,6 +160,7 @@ public class SigueTuHistoria {
                     } else {
                         pagina = 11;
                     }
+                    decisiones++;
                     break;
                 case 6:
                     System.out.println("\nPágina 6: El Barco Encallado");
@@ -150,14 +179,19 @@ public class SigueTuHistoria {
                     } else {
                         pagina = 13;
                     }
+                    decisiones++;
                     break;
                 case 7:
                     System.out.println("\nPágina 7: El Faro Abandonado");
-                    System.out.println("Te acercas al faro, que se alza en la costa como un guardián solitario de los " +
-                            "mares. La puerta \ncruje al abrirse y el interior está lleno de polvo y telarañas, como si el" +
-                            " tiempo hubiera olvidado \neste lugar. La luz que alguna vez guió a los barcos ya no " +
-                            "brilla. En lo alto, ves una escalera que \nlleva al faro, y hay un mapa antiguo colgado en la" +
-                            " pared, que puede contener secretos sobre la isla." );
+                    System.out.println("""
+                            Te acercas al faro, que se alza en la costa como un guardián solitario de los \
+                            mares. La puerta\s
+                            cruje al abrirse y el interior está lleno de polvo y telarañas, como si el\
+                             tiempo hubiera olvidado\s
+                            este lugar. La luz que alguna vez guió a los barcos ya no \
+                            brilla. En lo alto, ves una escalera que\s
+                            lleva al faro, y hay un mapa antiguo colgado en la\
+                             pared, que puede contener secretos sobre la isla.""");
                     System.out.println("\nOpciones:");
                     System.out.println("\t1. Subir al faro. (Página 14)");
                     System.out.println("\t2. Examinar el mapa en la pared. (Página 15)");
@@ -168,13 +202,17 @@ public class SigueTuHistoria {
                     } else {
                         pagina = 15;
                     }
+                    decisiones++;
                     break;
                 case 8:
                     System.out.println("\nPágina 8: El Brillo de la Cueva");
-                    System.out.println("Te acercas al brillo y descubres un cristal brillante, que parece pulsar con " +
-                            "energía. Al tocarlo, sientes una \nconexión inmediata, como si el cristal te hablara. Sin " +
-                            "embargo, el rugido se intensifica, llenando el aire con \nuna tensión palpable. Debes decidir" +
-                            " si arriesgarte y seguir adelante, o retirarte de la misteriosa cueva.");
+                    System.out.println("""
+                            Te acercas al brillo y descubres un cristal brillante, que parece pulsar con \
+                            energía. Al tocarlo, sientes una\s
+                            conexión inmediata, como si el cristal te hablara. Sin \
+                            embargo, el rugido se intensifica, llenando el aire con\s
+                            una tensión palpable. Debes decidir\
+                             si arriesgarte y seguir adelante, o retirarte de la misteriosa cueva.""");
                     System.out.println("\nOpciones:");
                     System.out.println("\t1. Llevarte el cristal y salir. (Página 16)");
                     System.out.println("\t2. Quedarte a investigar el origen del rugido. (Página 17)");
@@ -185,6 +223,7 @@ public class SigueTuHistoria {
                     } else {
                         pagina = 17;
                     }
+                    decisiones++;
                     break;
                 case 9:
                     System.out.println("\nPágina 9: Salida de la Cueva");
@@ -202,13 +241,17 @@ public class SigueTuHistoria {
                     } else {
                         pagina = 3;
                     }
+                    decisiones++;
                     break;
                 case 10:
                     System.out.println("\nPágina 10: La Moneda del Claro");
-                    System.out.println("Tomas la moneda y decides seguir explorando. De repente, la sombra se revela como " +
-                            "un viejo guardián de la isla, \nque te observa con ojos sabios. Te advierte sobre el peligro " +
-                            "que acecha en los rincones de la isla y te ofrece \nsu ayuda, pero primero debe saber si eres" +
-                            " digno de su confianza.");
+                    System.out.println("""
+                            Tomas la moneda y decides seguir explorando. De repente, la sombra se revela como \
+                            un viejo guardián de la isla,\s
+                            que te observa con ojos sabios. Te advierte sobre el peligro \
+                            que acecha en los rincones de la isla y te ofrece\s
+                            su ayuda, pero primero debe saber si eres\
+                             digno de su confianza.""");
                     System.out.println("\nOpciones:");
                     System.out.println("\t1. Preguntarle sobre el tesoro. (Página 18)");
                     System.out.println("\t2. Intentar escapar. (Página 19)");
@@ -219,6 +262,7 @@ public class SigueTuHistoria {
                     } else {
                         pagina = 19;
                     }
+                    decisiones++;
                     break;
                 case 11:
                     System.out.println("\nPágina 11: Escondido en el Claro");
@@ -236,6 +280,7 @@ public class SigueTuHistoria {
                     } else {
                         pagina = 21;
                     }
+                    decisiones++;
                     break;
                 case 12:
                     System.out.println("\nPágina 12: Abrir el Cofre");
@@ -254,6 +299,7 @@ public class SigueTuHistoria {
                     } else {
                         pagina = 23;
                     }
+                    decisiones++;
                     break;
                 case 13:
                     System.out.println("\nPágina 13: La Bodega");
@@ -274,6 +320,7 @@ public class SigueTuHistoria {
                     } else {
                         pagina = 26;
                     }
+                    decisiones++;
                     break;
                 case 14:
                     System.out.println("\nPágina 14: Subiendo al Faro");
@@ -294,6 +341,7 @@ public class SigueTuHistoria {
                     } else {
                         pagina = 29;
                     }
+                    decisiones++;
                     break;
                 case 15:
                     System.out.println("\nPágina 15: Examinar el Mapa");
@@ -314,13 +362,17 @@ public class SigueTuHistoria {
                     } else {
                         pagina = 28;
                     }
+                    decisiones++;
                     break;
                 case 16:
                     System.out.println("\nPágina 16: Llevar el Cristal");
-                    System.out.println("Decides llevarte el cristal. Al salir de la cueva, sientes  que el mapa comienza a" +
-                            " brillar intensamente, como \nsi te guiara hacia un  destino especial. El aire a tu alrededor" +
-                            " cambia, volviéndose más pesado y cargado de energía. \nEstás a punto de descubrir algo " +
-                            "increíble.");
+                    System.out.println("""
+                            Decides llevarte el cristal. Al salir de la cueva, sientes  que el mapa comienza a\
+                             brillar intensamente, como\s
+                            si te guiara hacia un  destino especial. El aire a tu alrededor\
+                             cambia, volviéndose más pesado y cargado de energía.\s
+                            Estás a punto de descubrir algo \
+                            increíble.""");
                     System.out.println("\nOpciones:");
                     System.out.println("\t1. Seguir el mapa hacia el corazón de la isla.");
                     System.out.println("\t2. Regresar al claro. (Página 5)");
@@ -331,6 +383,7 @@ public class SigueTuHistoria {
                     }else {
                         pagina = 5;
                     }
+                    decisiones++;
                     break;
                 case 17:
                     System.out.println("\nPágina 17: Investigar el Rugido");
@@ -344,19 +397,24 @@ public class SigueTuHistoria {
                     System.out.print("\nQue haces?: ");
                     respuesta = sc.nextInt();
                     finAventura = true;
+                    decisiones++;
                     break;
                 case 18:
                     System.out.println("\nPágina 18: Preguntar al Guardián");
-                    System.out.println("Le preguntas al guardián sobre el tesoro, que te dice que solo los dignos pueden " +
-                            "encontrarlo. Te relata \nhistorias de aquellos que lo intentaron y fracasaron, advirtiéndote " +
-                            "que la aventura no será fácil. A medida que \nhabla, sientes que la verdad de su sabiduría se" +
-                            " asienta en tu corazón.");
+                    System.out.println("""
+                            Le preguntas al guardián sobre el tesoro, que te dice que solo los dignos pueden \
+                            encontrarlo. Te relata\s
+                            historias de aquellos que lo intentaron y fracasaron, advirtiéndote \
+                            que la aventura no será fácil. A medida que\s
+                            habla, sientes que la verdad de su sabiduría se\
+                             asienta en tu corazón.""");
                     System.out.println("\nOpciones:");
                     System.out.println("\t1. Demostrar tu valía.");
                     System.out.println("\t2. Preguntar cómo hacerlo.");
                     System.out.print("\nQue haces?: ");
                     respuesta = sc.nextInt();
                     finAventura = true;
+                    decisiones++;
                     break;
                 case 19:
                     System.out.println("\nPágina 19: Intentar Escapar");
@@ -369,6 +427,7 @@ public class SigueTuHistoria {
                     System.out.print("\nQue haces?: ");
                     respuesta = sc.nextInt();
                     finAventura = true;
+                    decisiones++;
                     break;
                 case 20:
                     System.out.println("\nPágina 20: Preguntar al Anciano");
@@ -381,6 +440,7 @@ public class SigueTuHistoria {
                     System.out.print("\nQue haces?: ");
                     respuesta = sc.nextInt();
                     finAventura = true;
+                    decisiones++;
                     break;
                 case 21:
                     System.out.println("\nPágina 21: Ofrecerle la Moneda");
@@ -393,6 +453,7 @@ public class SigueTuHistoria {
                     System.out.print("\nQue haces?: ");
                     respuesta = sc.nextInt();
                     finAventura = true;
+                    decisiones++;
                     break;
                 case 22:
                     System.out.println("\nPágina 22: Seguir el Nuevo Mapa");
@@ -406,6 +467,7 @@ public class SigueTuHistoria {
                     System.out.print("\nQue haces?: ");
                     respuesta = sc.nextInt();
                     finAventura = true;
+                    decisiones++;
                     break;
                 case 23:
                     System.out.println("\nPágina 23: Buscar Más en el Barco");
@@ -418,6 +480,7 @@ public class SigueTuHistoria {
                     System.out.print("\nQue haces?: ");
                     respuesta = sc.nextInt();
                     finAventura = true;
+                    decisiones++;
                     break;
                 case 24:
                     System.out.println("\nPágina 24: Sacar el Oro");
@@ -430,6 +493,7 @@ public class SigueTuHistoria {
                     System.out.print("\nQue haces?: ");
                     respuesta = sc.nextInt();
                     finAventura = true;
+                    decisiones++;
                     break;
                 case 25:
                     System.out.println("\nPágina 25: Escapar del Barco");
@@ -442,6 +506,7 @@ public class SigueTuHistoria {
                     System.out.print("\nQue haces?: ");
                     respuesta = sc.nextInt();
                     finAventura = true;
+                    decisiones++;
                     break;
                 case 26:
                     System.out.println("\nPágina 26: Quedarte a Investigar");
@@ -454,6 +519,7 @@ public class SigueTuHistoria {
                     System.out.print("\nQue haces?: ");
                     respuesta = sc.nextInt();
                     finAventura = true;
+                    decisiones++;
                     break;
                 case 27:
                     System.out.println("\nPágina 27: Ir al Norte");
@@ -466,6 +532,7 @@ public class SigueTuHistoria {
                     System.out.print("\nQue haces?: ");
                     respuesta = sc.nextInt();
                     finAventura = true;
+                    decisiones++;
                     break;
                 case 28:
                     System.out.println("\nPágina 28: Dirigirte al Este");
@@ -478,6 +545,7 @@ public class SigueTuHistoria {
                     System.out.print("\nQue haces?: ");
                     respuesta = sc.nextInt();
                     finAventura = true;
+                    decisiones++;
                     break;
                 case 29:
                     System.out.println("\nPágina 29: Regresar al Suelo");
@@ -494,6 +562,7 @@ public class SigueTuHistoria {
                     } else {
                         pagina = 3;
                     }
+                    decisiones++;
                     break;
                 case 30:
                     System.out.println("\nPágina 30: Ir al Templo");
@@ -506,6 +575,7 @@ public class SigueTuHistoria {
                     System.out.print("\nQue haces?: ");
                     respuesta = sc.nextInt();
                     finAventura = true;
+                    decisiones++;
                     break;
                 case 31:
                     System.out.println("\nPágina 31: Buscar la Cueva");
@@ -517,16 +587,21 @@ public class SigueTuHistoria {
                     System.out.print("\nQue haces?: ");
                     respuesta = sc.nextInt();
                     finAventura = true;
+                    decisiones++;
                     break;
             }
         }
         switch (pagina){
             case 16:
-                System.out.println("Al tocar el cristal brillante, una luz resplandece y revela un antiguo mensaje sobre " +
-                        "la isla. Te das cuenta de \nque el verdadero tesoro no es solo el oro, sino el conocimiento y la " +
-                        "historia que ahora llevas contigo. Has sido \nelegido para proteger este legado y compartirlo con" +
-                        " el mundo. Regresas a casa con el objeto y una historia que \ncontar, sabiendo que la aventura ha" +
-                        " cambiado tu vida para siempre.");
+                System.out.println("""
+                        Al tocar el cristal brillante, una luz resplandece y revela un antiguo mensaje sobre \
+                        la isla. Te das cuenta de\s
+                        que el verdadero tesoro no es solo el oro, sino el conocimiento y la \
+                        historia que ahora llevas contigo. Has sido\s
+                        elegido para proteger este legado y compartirlo con\
+                         el mundo. Regresas a casa con el objeto y una historia que\s
+                        contar, sabiendo que la aventura ha\
+                         cambiado tu vida para siempre.""");
                 break;
             case 17:
                 if(respuesta == 1 ){
@@ -543,10 +618,13 @@ public class SigueTuHistoria {
                 break;
             case 18:
                 if(respuesta == 1){
-                    System.out.println("El guardián te dice que solo los dignos pueden encontrar el tesoro. Al demostrar " +
-                            "tu valentía, te revela la \nubicación de un escondite lleno de riquezas y conocimiento. " +
-                            "Regresas a casa con un tesoro que no solo es material, \nsino también un símbolo de tu " +
-                            "crecimiento personal y de la amistad que cultivaste en la isla.");
+                    System.out.println("""
+                            El guardián te dice que solo los dignos pueden encontrar el tesoro. Al demostrar \
+                            tu valentía, te revela la\s
+                            ubicación de un escondite lleno de riquezas y conocimiento. \
+                            Regresas a casa con un tesoro que no solo es material,\s
+                            sino también un símbolo de tu \
+                            crecimiento personal y de la amistad que cultivaste en la isla.""");
                 } else {
                     System.out.println("Decides preguntar al guardián cómo acceder al tesoro. Sin embargo, al hacerlo, " +
                             "revelas tus intenciones. Este se niega a ayudarte y te advierte sobre las consecuencias de la" +
@@ -613,7 +691,7 @@ public class SigueTuHistoria {
                             "llevado a tesoros inimaginables. Regresas a casa no solo con oro, sino con la experiencia de " +
                             "un verdadero explorador.");
                 } else {
-                    System.out.println("ecides no seguir el nuevo mapa y, en cambio, regresar a la costa. Te das cuenta de" +
+                    System.out.println("Decides no seguir el nuevo mapa y, en cambio, regresar a la costa. Te das cuenta de" +
                             " que has dejado escapar la oportunidad de descubrir algo increíble. Al volver, sientes que te" +
                             " has perdido en la inmensidad de la isla y que la búsqueda del tesoro se ha desvanecido. " +
                             "Regresas al barco, sintiendo una mezcla de decepción y curiosidad por lo que podría haber " +
@@ -755,5 +833,6 @@ public class SigueTuHistoria {
                 }
                 break;
         }
+        System.out.printf("Has completado la aventura en %d intentos", decisiones);
     }
 }
